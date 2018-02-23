@@ -1,5 +1,5 @@
 ARG BUILD_ID
-FROM tensorcomprehensions/linux-trusty-gcc4.8-tapir5.0-cuda8-cudnn6:${BUILD_ID}
+FROM registry.pytorch.org/tensorcomp/linux-trusty-gcc4.8-cuda8-cudnn6:${BUILD_ID}
 
 ENV DEBIAN_FRONTEND noninteractive
 
