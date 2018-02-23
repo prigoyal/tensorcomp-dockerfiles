@@ -1,5 +1,5 @@
 ARG BUILD_ID
-FROM tensorcomprehensions/linux-xenial:${BUILD_ID}
+FROM registry.pytorch.org/tensorcomp/linux-trusty:${BUILD_ID}
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -8,9 +8,10 @@ RUN apt-get install -y --no-install-recommends vim
 
 RUN add-apt-repository ppa:ubuntu-toolchain-r/test
 RUN apt-get update
-RUN apt-get install -y --no-install-recommends gcc-5 g++-5
-RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 50
-RUN update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 50
+RUN apt-get install -y --no-install-recommends libcilkrts5
+RUN apt-get install -y --no-install-recommends gcc-4.8 g++-4.8
+RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 50
+RUN update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
 
 ENV CC /usr/bin/gcc
 ENV CXX /usr/bin/g++
