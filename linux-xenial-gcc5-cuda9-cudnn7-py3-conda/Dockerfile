@@ -35,3 +35,5 @@ RUN which protoc
 RUN protoc --version
 RUN which python
 RUN python --version
+
+CMD ["bash"]
