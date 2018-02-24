@@ -33,3 +33,5 @@ RUN python3 --version
 RUN python3 -c 'import yaml'
 RUN which protoc
 RUN protoc --version
+
+CMD ["bash"]
